@@ -48,6 +48,7 @@
           }
           function redirect(loc) {
               //loc.href = store_link;
+              window.location.replace(store_link);
               if(fallback_url.startsWith("http")) {
                   setTimeout(function() {
                       loc.href = fallback_url;
@@ -56,7 +57,7 @@
           }
       </script>
   </head>
-  <body>
+  <body onLoad="redirect()">
       <div class="main">
           <div class="workarea">
               <div id="logo" class="logo">
