@@ -1,28 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"
-    />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="When Great Minds Don’t Think Alike" />
-    <meta property="og:description" content="How much does culture influence creative thinking?" />
-    <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
-    />
-    <title>Document</title>
-</head>
+    body {
+      background: #F5F6F8;
+      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
+      color: #2C3E51;
+    }
 
-<body>
- 
-    
-    <a href="https://www.google.ie/aclk?sa=l&ai=DChcSEwiivaXrqL_lAhUHsu0KHcdEAewYABABGgJkZw&ae=1&sig=AOD64_3JkCWvLBnkeNU5v-f3bB9gNQyIHQ&q&adurl=https://kontist.com/product/bank-account?gclid%3DEAIaIQobChMIor2l66i_5QIVB7LtCh3HRAHsEAAYASAAEgLKxvD_BwE&ved=2ahUKEwjGiKDrqL_lAhXGiVwKHYByCUgQ0Qx6BAgHEAE
-">Link Test </a>
+    .main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
+    .main>div>div,
+    .main>div>span {
+      text-align: center;
+    }
 
+    .main span {
+      display: block;
+      padding: 80px 0 170px;
+      font-size: 3rem;
+    }
 
-</body>
-
+    .main .app img {
+      width: 400px;
+    }
+  </style>
+      <script type="text/javascript">
+          var fallback_url = "null";
+          var store_link = "itms-apps://apps.apple.com/US/app/id547702041?ls=1&mt=8";
+          var web_store_link = "https://apps.apple.com/US/app/id547702041?mt=8";
+          var appIcon = "https://cdnappicons.appsflyer.com/id547702041.png";
+          var loc = window.location;
+          function redirect_to_web_store(loc) {
+              loc.href = web_store_link;
+          }
+          function redirect(loc) {
+              loc.href = store_link;
+              if(fallback_url.startsWith("http")) {
+                  setTimeout(function() {
+                      loc.href = fallback_url;
+                  }, 3500)
+              }
+          }
+      </script>
+  </head>
+  <body onload="redirect(loc)">
+      <div class="main">
+          <div class="workarea">
+              <div id="logo" class="logo">
+              </div>
+              <span>Tinder</span>
+              <div class="app">
+                  <img src="https://cdn.appsflyer.com/af-statics/images/rta/app_store_badge.png" onclick="redirect_to_web_store(loc)"/>
+              </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          document.addEventListener('visibilitychange', function() {
+              if (window.history.length > 1) {
+                  window.history.go(-1); // go back to previous page
+              }
+          });
+          if (appIcon !== "null") {
+              var logoElement = document.getElementById("logo");
+              var imgElement = document.createElement("IMG");
+              imgElement.setAttribute("src", appIcon);
+              imgElement.setAttribute("style", "width:200px;height:200px;border-radius:20px;");
+              imgElement.setAttribute("onclick", "redirect_to_web_store(loc)");
+              logoElement.appendChild(imgElement);
+          }
+      </script>
+  </body>
 </html>
